@@ -1,0 +1,18 @@
+import { Field, Int, ObjectType } from "@nestjs/graphql";
+
+
+@ObjectType({ description: 'Todo quick aggregations' })
+export class AggregationsType {
+
+    @Field( () => Int)
+    total: number
+
+    @Field( () => Int)
+    pending: number
+
+    @Field( () => Int)
+    completed: number
+
+    @Field( () => Int, { deprecationReason: 'Escribir la razon por la que no se debe utilizar' })
+    totalTodosCompleted: number
+}
